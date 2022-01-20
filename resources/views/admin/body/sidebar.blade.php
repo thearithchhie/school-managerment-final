@@ -55,7 +55,7 @@
                      </span>
                  </a>
                  <ul class="treeview-menu">
-                     <li class="{{ Request::is('profile/*') ? 'active' : '' }}"><a
+                     <li class="{{ Request::is('profile/view', 'profile/edit') ? 'active' : '' }}"><a
                              href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
                      <li class="{{ Request::is('profile/password/*') ? 'active' : '' }}"><a
                              href="{{ route('password.view') }}"><i class="ti-more"></i>Change Password</a>
