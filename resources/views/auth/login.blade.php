@@ -1,101 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../images/favicon.ico">
-
-    <title>Easy ERP - Log in </title>
-  
-    <!-- Vendors Style-->
-    <link rel="stylesheet" href="{{ asset('backend/css/vendors_css.css') }}">
-      
-    <!-- Style-->  
-    <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('backend/css/skin_color.css') }}">   
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="shortcut icon" href="{{ asset('image/logo.png') }}" type="image/x-icon">
+    <script src="//unpkg.com/feather-icons"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/auth/css/app.css') }}">
+    <script src="{{ asset('backend/auth/js/app.js') }}"></script>
+    <script src="//unpkg.com/feather-icons"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="{{ asset('plugin/toastr-2.1.4/toastr.min.css') }}">
+    <script src="{{ asset('plugin/toastr-2.1.4/toastr.min.js') }}"></script>
 </head>
-<body class="hold-transition theme-primary bg-gradient-primary">
-    
-    <div class="container h-p100">
-        <div class="row align-items-center justify-content-md-center h-p100">   
-            
-            <div class="col-12">
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-4 col-md-5 col-12">
-                        <div class="content-top-agile p-10">
-                            <h2 class="text-white">Get started with Us</h2>
-                            <p class="text-white-50">Sign in to start your session</p>                          
+<body>
+    <div class="login">
+        <div class="login-wrapper">
+            <div class="bg-image">
+                <img class="logo" src="{{ asset('image/logo.png') }}" alt="">
+            </div>
+            <div class="form-container">
+                <form class="form" id="login-form" action="{{ route('login') }}" method="post">
+                    @csrf
+                    <h2>Login to Administrator</h2>
+                    <p class="form-des">Thank you for get back to School Managerment Admin, lets
+                        access our the best recommendation for
+                        your</p>
+                    <div class="form-wrapper">
+                        <div class="form-row">
+                            <label>Email <span>*</span> </label>
+                            <input name="email" placeholder="Enter email" type="text">
                         </div>
-                        <div class="p-30 rounded30 box-shadowed b-2 b-dashed">
-   
-     <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-        <div class="form-group">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text bg-transparent text-white"><i class="ti-user"></i></span>
-                </div>
-       <input type="email" id="email" name="email" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Username">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text  bg-transparent text-white"><i class="ti-lock"></i></span>
-                </div>
-  <input type="password" id="password" name="password" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Password">
-            </div>
-        </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="checkbox text-white">
-                <input type="checkbox" id="basic_checkbox_1" >
-                <label for="basic_checkbox_1">Remember Me</label>
-              </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-6">
-             <div class="fog-pwd text-right">
-                <a href="{{ route('password.request') }}" class="text-white hover-info"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
-              </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-12 text-center">
-              <button type="submit" class="btn btn-info btn-rounded mt-10">SIGN IN</button>
-            </div>
-            <!-- /.col -->
-          </div>
-    </form>                                                     
-
-    <div class="text-center text-white">
-      <p class="mt-20">- Sign With -</p>
-      <p class="gap-items-2 mb-20">
-          <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-facebook"></i></a>
-          <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-twitter"></i></a>
-          <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-google-plus"></i></a>
-          <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-instagram"></i></a>
-        </p>    
-    </div>
-    
-    <div class="text-center">
-        <p class="mt-15 mb-0 text-white">Don't have an account? <a href="{{ route('register') }}" class="text-info ml-5">Sign Up</a></p>
-                            </div>
+                        <div class="form-row">
+                            <label>Password <span>*</span> </label>
+                            <input name="password" placeholder="Enter password" type="password">
                         </div>
+
+                        <button color="primary" class="btn-submit-form" type="submit">
+                            <span>Login</span>
+                        </button>
                     </div>
-                </div>
+                    @if (Session::has('status'))
+                    <p class="q-label-error login-error">
+                        Your email or password is incorrect.
+                    </p>
+                    @endif
+                </form>
             </div>
         </div>
     </div>
-
-
-    <!-- Vendor JS -->
-    <script src="{{ asset('backend/js/vendors.min.js') }}"></script>
-    <script src="{{ asset('../assets/icons/feather-icons/feather.min.js') }}"></script>    
-
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $(document).ready(function() {
+            $('.selectData').select2();
+            $('.custom-select').select2({
+                minimumResultsForSearch: -1
+            });
+        });
+        $(document).ready(function() {
+            @if (Session::has('success'))
+                toastr.success("{!! Session::get('success') !!}", 'Success Message!', {timeOut: 5000});
+            @elseif(Session::has('error'))
+                toastr.error("{!! Session::get('error') !!}", 'Error Message!', {timeOut: 5000});
+            @elseif(Session::has('warning'))
+                toastr.warning("{!! Session::get('warning') !!}", 'Warning Message!', {timeOut: 5000});
+            @endif
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            let validate = {
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true
+                }
+            };
+            $validator("#login-form", validate);
+        });
+    </script>
+    <script src="{{ asset('js/body.js') }}"></script>
 </body>
 </html>
