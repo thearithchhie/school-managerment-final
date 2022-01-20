@@ -11,9 +11,6 @@
     <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/auth/css/app.css') }}">
     <script src="{{ asset('backend/auth/js/app.js') }}"></script>
     <script src="//unpkg.com/feather-icons"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <link rel="stylesheet" href="{{ asset('plugin/toastr-2.1.4/toastr.min.css') }}">
-    <script src="{{ asset('plugin/toastr-2.1.4/toastr.min.js') }}"></script>
 </head>
 <body>
     <div class="login">

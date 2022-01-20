@@ -9,5 +9,5 @@
 		  </li>
 		</ul>
     </div> --}}
-	  &copy; <?php echo date('Y'); ?> <a href="#">SQ5</a>. All Rights Reserved.
+	  &copy; <?php echo date('Y'); ?> <a href="#" style="color:#00b655">Thearith, Bona</a>. All Rights Reserved.
   </footer>
