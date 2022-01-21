@@ -42,7 +42,7 @@
             <td>
                 <h2>
                     <?php $image_path = '/image/logo_3.png'; ?>
-                    <img src="{{ public_path() . $image_path }}" width="200" height="100">
+                    <img src="{{ public_path() . $image_path }}" width="200" height="auto" style="object-fit: contain">
 
                 </h2>
             </td>
