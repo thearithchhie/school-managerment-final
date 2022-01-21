@@ -117,7 +117,7 @@
                      </span>
                  </a>
                  <ul class="treeview-menu">
-                     <li class="{{ Request::is('students/reg/view', 'students/reg/Add') ? 'active' : '' }}"><a
+                     <li class="{{ Request::is('students/reg/view', 'students/reg/Add','students/year/class/*') ? 'active' : '' }}"><a
                              href="{{ route('student.registration.view') }}"><i class="ti-more"></i>Student
                              Registration</a></li>
                      <li class="{{ Request::is('students/roll/generate/*') ? 'active' : '' }}"><a

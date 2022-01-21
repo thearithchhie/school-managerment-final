@@ -27021,7 +27021,7 @@ app-loading .loading .mat-spinner circle {
   height: 100%;
   width: calc(100% - 500px);
   position: relative;
-  background: #272e48;
+  background: #222831;
 }
 
 .login .login-wrapper .bg-image img {
@@ -27170,7 +27170,7 @@ app-loading .loading .mat-spinner circle {
 
 .login .login-wrapper .form-container .form .form-wrapper .btn-submit-form {
   width: 100%;
-  background-color: #272e48;
+  background-color: #222831;
   display: flex;
   justify-content: center;
 }
