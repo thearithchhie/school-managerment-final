@@ -41,8 +41,8 @@
                          </span>
                      </a>
                      <ul class="treeview-menu">
-                         <li><a href="{{ route('user.view') }}"><i class="ti-more"></i>View User</a></li>
-                         <li><a href="{{ route('users.add') }}"><i class="ti-more"></i>Add User</a></li>
+                         <li class="{{ Request::is('users/view') ? 'active' : '' }}"><a href="{{ route('user.view') }}"><i class="ti-more"></i>View User</a></li>
+                         <li class="{{ Request::is('users/add', 'users/edit/*') ? 'active' : '' }}"><a href="{{ route('users.add') }}"><i class="ti-more"></i>Add User</a></li>
                      </ul>
                  </li>
              @endif
@@ -267,10 +267,10 @@
          <a href="javascript:void(0)" class="link" data-toggle="tooltip" title=""
              data-original-title="Settings" aria-describedby="tooltip92529"><i class="ti-settings"></i></a>
          <!-- item-->
-         <a href="mailbox_inbox.html" class="link" data-toggle="tooltip" title=""
-             data-original-title="Email"><i class="ti-email"></i></a>
+         <a href="https://github.com/" target="_blank" class="link" data-toggle="tooltip" title=""
+             data-original-title="Github"><i class=" ti-github"></i></a>
          <!-- item-->
-         <a href="javascript:void(0)" class="link" data-toggle="tooltip" title=""
+         <a href="{{ route('admin.logout') }}" class="link" data-toggle="tooltip" title=""
              data-original-title="Logout"><i class="ti-lock"></i></a>
      </div>
  </aside>
